@@ -29,6 +29,7 @@ recipe "hopsmonitor::influxdb", "Installs and configure InfluxDb"
 recipe "hopsmonitor::grafana", "Installs and configure Grafana"
 recipe "hopsmonitor::prometheus", "Installs and configure Prometheus"
 recipe "hopsmonitor::node_exporter", "Installs and configure node exporter"
+recipe "hopsmonitor::alertmanager", "Installs and configure node exporter"
 recipe "hopsmonitor::purge", "Deletes the Influxdb/Grafana Server"
 
 attribute "hopsmonitor/user",
@@ -114,7 +115,7 @@ attribute "grafana/port",
 
 #
 #  Prometheus
-# 
+#
 attribute "prometheus/retention_time",
           :description => "Retention time for prometheus data",
           :type => "string"
@@ -125,7 +126,7 @@ attribute "prometheus/port",
 
 #
 # Alertmanager
-# 
+#
 attribute "alertmanager/port",
           :description => "port on which alertmanager listens",
           :type => "string"
@@ -136,10 +137,10 @@ attribute "alertmanager/slack/api_url",
 attribute "alertmanager/slack/channel",
           :description => "Slack channel",
           :type => "string"
-attribute "alertmanager/slack/username",        
+attribute "alertmanager/slack/username",
           :description => "Slack bot username",
           :type => "string"
-attribute "alertmanager/slack/text",       
+attribute "alertmanager/slack/text",
           :description => "Slack text template",
           :type => "string"
 
@@ -149,7 +150,7 @@ attribute "alertmanager/email/to",
 attribute "alertmanager/email/from",
           :description => "Email address to send alerts from",
           :type => "string"
-attribute "alertmanager/email/smtp_host", 
+attribute "alertmanager/email/smtp_host",
           :description => "Smtp host",
           :type => "string"
 attribute "alertmanager/email/auth_username",
